@@ -8,35 +8,16 @@
 </head>
 <body>
   <script>
-// let arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];
-// function bubbleSortNext(arr) {
-//   let len  = arr.length;
-//   let i = len - 1;
-//   while(i > 0){
-//     let pos = 0;
-//     let over = true;
-//     for(let j = 0; j < i; j++){
-//       if(arr[j] > arr[j+1]){
-//         over = false;
-//         pos = j;
-//         [arr[j],arr[j+1]] = [arr[j+1],arr[j]]
-//       }
-//     }
-//     if(over){
-//       console.log('over');
-//       return arr;
-//     }
-//     i = pos
-//   }
-//   return arr;
-// }
-// console.log(bubbleSortNext(arr))
-
-const _script = document.createElement('script');
-_script.setAttribute('charset', 'utf-8');
-_script.setAttribute('type', 'text/javascript');
-_script.setAttribute('src', './1.js');
-document.getElementsByTagName('head')[0].appendChild(_script);
+    // reduce entries
+    // entries 把object转为数组  [['a','foo'],['b','bar']]
+    // reduce遍历数组
+    // () => () 的写法是返回一个字面量类型 等价于 () => {return xx}
+    let obj = {a: 'foo', b: 'bar'};
+    const res = Object.entries(obj).reduce((acc, [k,v]) => ({
+      ...acc,
+      [k]: v+1
+    }),{})
+    console.log(res)
   </script>
 </body>
 </html>
